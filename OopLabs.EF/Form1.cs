@@ -21,6 +21,11 @@ namespace OopLabs.EF
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ProductGridView.DataSource = _entities.Products.ToList();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
