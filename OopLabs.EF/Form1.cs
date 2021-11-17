@@ -21,7 +21,7 @@ namespace OopLabs.EF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CategoryComboBox.DataSource = _entities.ProductCategories.Where(pc => pc.ProductSubcategories.Any()).ToList();
+            CategoryComboBox.DataSource = _entities.ProductSubcategories.Where(ps => ps.Products.Any()).ToList();
             CategoryComboBox.ValueMember = "Name";
 
         }
@@ -32,8 +32,8 @@ namespace OopLabs.EF
 
         private void UpdateProductList(object sender, EventArgs e)
         {
-            var category = (ProductCategory)CategoryComboBox.SelectedItem;
-            var products = category.ProductSubcategories.SelectMany(ps => ps.Products).Where(p => p.Name.Contains(textBox1.Text));
+            var category = (ProductSubcategory)CategoryComboBox.SelectedItem;
+            var products = category.Products.Where(p => p.Name.Contains(textBox1.Text));
 
             ProductGridView.DataSource = products.ToList();
         }
