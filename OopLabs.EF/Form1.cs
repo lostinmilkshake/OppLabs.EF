@@ -21,12 +21,21 @@ namespace OopLabs.EF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ProductGridView.DataSource = _entities.Products.ToList();
+            CategoryComboBox.DataSource = _entities.ProductCategories.Where(pc => pc.ProductSubcategories.Any()).ToList();
+            CategoryComboBox.ValueMember = "Name";
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
 
+        private void UpdateProductList(object sender, EventArgs e)
+        {
+            var category = (ProductCategory)CategoryComboBox.SelectedItem;
+            var products = category.ProductSubcategories.SelectMany(ps => ps.Products);
+
+            ProductGridView.DataSource = products.ToList();
         }
     }
 }

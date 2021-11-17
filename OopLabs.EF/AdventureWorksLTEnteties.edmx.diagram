@@ -6,7 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="581816d324bf4f95b63213bcab9f172f" Name="Diagram1">
         <EntityTypeShape EntityType="AdventureWorksModel.Product" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorksModel.ProductCategory" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorksModel.ProductCategory" Width="1.5" PointX="4.375" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="AdventureWorksModel.ProductProductCategory" />
+        <AssociationConnector Association="AdventureWorksModel.ProductProductCategory" />
+        <EntityTypeShape EntityType="AdventureWorksModel.ProductSubcategory" Width="1.5" PointX="2.625" PointY="0.75" />
+        <AssociationConnector Association="AdventureWorksModel.FK_Product_ProductSubcategory_ProductSubcategoryID" />
+        <AssociationConnector Association="AdventureWorksModel.FK_ProductSubcategory_ProductCategory_ProductCategoryID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

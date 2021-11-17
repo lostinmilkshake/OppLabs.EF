@@ -12,18 +12,20 @@ namespace OopLabs.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductCategory
+    public partial class ProductSubcategory
     {
-        public ProductCategory()
+        public ProductSubcategory()
         {
-            this.ProductSubcategories = new HashSet<ProductSubcategory>();
+            this.Products = new HashSet<Product>();
         }
     
+        public int ProductSubcategoryID { get; set; }
         public int ProductCategoryID { get; set; }
         public string Name { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<ProductSubcategory> ProductSubcategories { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
+        public virtual ProductCategory ProductCategory { get; set; }
     }
 }

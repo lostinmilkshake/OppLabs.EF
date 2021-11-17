@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -55,32 +56,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdventureWorksEnteties.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksEnteties.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksEnteties.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksEnteties.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksEnteties.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksEnteties.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksLTEnteties.Designer.cs">
+      <DependentUpon>AdventureWorksLTEnteties.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Include="Model3.cs">
+      <DependentUpon>Model3.tt</DependentUpon>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AdventureWorksLTEnteties.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdventureWorksLTEnteties.edmx</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductCategory.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSubcategory.cs">
+      <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,12 +110,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="AdventureWorksEnteties.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdventureWorksEnteties.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="AdventureWorksLTEnteties.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AdventureWorksLTEnteties.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="AdventureWorksLTEnteties.edmx.diagram">
-      <DependentUpon>AdventureWorksLTEnteties.edmx</DependentUpon>
+    <None Include="AdventureWorksEnteties.edmx.diagram">
+      <DependentUpon>AdventureWorksEnteties.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -118,15 +136,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model1.Context.tt">
+    <Content Include="AdventureWorksEnteties.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>AdventureWorksLTEnteties.edmx</DependentUpon>
+      <DependentUpon>AdventureWorksEnteties.edmx</DependentUpon>
+      <LastGenOutput>AdventureWorksEnteties.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model1.tt">
+    <Content Include="AdventureWorksEnteties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventureWorksEnteties.edmx</DependentUpon>
+      <LastGenOutput>AdventureWorksEnteties.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model3.tt">
       <DependentUpon>AdventureWorksLTEnteties.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model3.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
