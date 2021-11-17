@@ -33,7 +33,7 @@ namespace OopLabs.EF
         private void UpdateProductList(object sender, EventArgs e)
         {
             var category = (ProductCategory)CategoryComboBox.SelectedItem;
-            var products = category.ProductSubcategories.SelectMany(ps => ps.Products);
+            var products = category.ProductSubcategories.SelectMany(ps => ps.Products).Where(p => p.Name.Contains(textBox1.Text));
 
             ProductGridView.DataSource = products.ToList();
         }
